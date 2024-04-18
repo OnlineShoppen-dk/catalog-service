@@ -3,5 +3,6 @@
 ## https://github.com/elastic/logstash/blob/main/docker/data/logstash/config/logstash-full.yml
 #
 http.host: 0.0.0.0
-
+api.environment: dev
 node.name: logstash
+queue.type: persisted

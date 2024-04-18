@@ -1,0 +1,2 @@
+- pipeline.id: pipeline-for-rabbitmq
+  path.config: "/usr/share/logstash/pipeline/logstash.conf"
