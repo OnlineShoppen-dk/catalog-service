@@ -8,8 +8,16 @@ using Elastic.Clients.Elasticsearch.QueryDsl;
 
 var builder = WebApplication.CreateBuilder(args);
 
+var nodes = new Uri[]
+{
+	new Uri("http://localhost:9200"),
+	new Uri("http://localhost:9201"),
+	new Uri("http://localhost:9202")
+};
+
+var pool = new StaticNodePool(nodes);
 // Configure Elasticsearch client with API Key and Certificate Fingerprint
-var settings = new ElasticsearchClientSettings(new Uri("http://localhost:9200"))
+var settings = new ElasticsearchClientSettings(pool)
     .Authentication(new BasicAuthentication("elastic", "changeme"))
     .EnableDebugMode()  // Optional: Enables detailed logging for debugging
     .PrettyJson()       // Optional: Formats JSON output to be more readable

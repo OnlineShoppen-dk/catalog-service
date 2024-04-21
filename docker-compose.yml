@@ -40,32 +40,75 @@ services:
     networks:
       - elastic
     depends_on:
-      - elasticsearch
+      - elasticsearch1
 
-  elasticsearch:
+
+  elasticsearch1:
     build:
       context: elasticsearch/
       args:
         ELASTIC_VERSION: ${ELASTIC_VERSION}
     volumes:
       - ./elasticsearch/config/elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml:ro,Z
-      - elasticsearch:/usr/share/elasticsearch/data:Z
+      - elasticsearch1:/usr/share/elasticsearch/data:Z
     ports:
       - "9200:9200"
       - "9300:9300"
-    ulimits:
-      memlock:
-        soft: -1
-        hard: -1
     environment:
-      node.name: elasticsearch
-      ES_JAVA_OPTS: -Xms512m -Xmx512m
-      ELASTIC_PASSWORD: ${ELASTIC_PASSWORD:-}
-      discovery.type: single-node
+      - node.name=elasticsearch1
+      - cluster.initial_master_nodes=elasticsearch1,elasticsearch2,elasticsearch3
+      - discovery.seed_hosts=elasticsearch2,elasticsearch3
+      - cluster.name=docker-cluster
+      - ES_JAVA_OPTS=-Xms512m -Xmx512m
+      - ELASTIC_PASSWORD=${ELASTIC_PASSWORD:-}
     networks:
       - elastic
     restart: unless-stopped
-  
+
+  elasticsearch2:
+    build:
+      context: elasticsearch/
+      args:
+        ELASTIC_VERSION: ${ELASTIC_VERSION}
+    volumes:
+      - ./elasticsearch/config/elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml:ro,Z
+      - elasticsearch2:/usr/share/elasticsearch/data:Z
+    ports:
+      - "9201:9200"
+      - "9301:9300"
+    environment:
+      - node.name=elasticsearch2
+      - cluster.initial_master_nodes=elasticsearch1,elasticsearch2,elasticsearch3
+      - discovery.seed_hosts=elasticsearch1,elasticsearch3
+      - cluster.name=docker-cluster
+      - ES_JAVA_OPTS=-Xms512m -Xmx512m
+      - ELASTIC_PASSWORD=${ELASTIC_PASSWORD:-}
+    networks:
+      - elastic
+    restart: unless-stopped
+
+  elasticsearch3:
+    build:
+      context: elasticsearch/
+      args:
+        ELASTIC_VERSION: ${ELASTIC_VERSION}
+    volumes:
+      - ./elasticsearch/config/elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml:ro,Z
+      - elasticsearch3:/usr/share/elasticsearch/data:Z
+    ports:
+      - "9202:9200"
+      - "9302:9300"
+    environment:
+      - node.name=elasticsearch3
+      - cluster.initial_master_nodes=elasticsearch1,elasticsearch2,elasticsearch3
+      - discovery.seed_hosts=elasticsearch1,elasticsearch2
+      - cluster.name=docker-cluster
+      - ES_JAVA_OPTS=-Xms512m -Xmx512m
+      - ELASTIC_PASSWORD=${ELASTIC_PASSWORD:-}
+    networks:
+      - elastic
+    restart: unless-stopped
+
   logstash:
     build:
       context: logstash/
@@ -85,7 +128,7 @@ services:
     networks:
       - elastic
     depends_on:
-      - elasticsearch
+      - elasticsearch1
     restart: unless-stopped
 
   kibana:
@@ -102,7 +145,7 @@ services:
     networks:
       - elastic
     depends_on:
-      - elasticsearch
+      - elasticsearch1
     restart: unless-stopped
 
 networks:
@@ -110,4 +153,6 @@ networks:
     driver: bridge
 
 volumes:
-  elasticsearch:
+  elasticsearch1:
+  elasticsearch2:
+  elasticsearch3:
