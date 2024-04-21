@@ -15,7 +15,24 @@ namespace CatalogService.Services
             _client = client;
         }
 
-        
+        public async Task<IEnumerable<MyDocument>> GetAllDocumentsAsync()
+        {
+            var searchResponse = await _client.SearchAsync<MyDocument>(s => s
+                .Index("product-logs") // replace with your index name
+                .Query(q => q
+                    .MatchAll()
+                )
+            );
+
+            if (searchResponse.IsValid)
+            {
+                return searchResponse.Documents;
+            }
+            else
+            {
+                throw new Exception("Failed to fetch documents from Elasticsearch", searchResponse.OriginalException);
+            }
+        }
 
         public async Task<Product> GetProductAsync(int productId)
         {

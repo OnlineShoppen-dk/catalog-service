@@ -10,9 +10,9 @@ var builder = WebApplication.CreateBuilder(args);
 
 var nodes = new Uri[]
 {
-    new Uri("http://elasticsearch1-1:9200"),
-    new Uri("http://elasticsearch2-1:9201"),
-    new Uri("http://elasticsearch3-1:9202")
+    new Uri("http://localhost:9200"),
+    new Uri("http://localhost:9201"),
+    new Uri("http://localhost:9202")
 };
 
 var pool = new StaticNodePool(nodes);
