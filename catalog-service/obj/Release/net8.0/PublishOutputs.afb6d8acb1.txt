@@ -1,0 +1,16 @@
+C:\Users\Rasmus\Documents\store-systemer\group-project\docker-elk\catalog-service\bin\Release\net8.0\publish\CatalogService.exe
+C:\Users\Rasmus\Documents\store-systemer\group-project\docker-elk\catalog-service\bin\Release\net8.0\publish\appsettings.Development.json
+C:\Users\Rasmus\Documents\store-systemer\group-project\docker-elk\catalog-service\bin\Release\net8.0\publish\appsettings.json
+C:\Users\Rasmus\Documents\store-systemer\group-project\docker-elk\catalog-service\bin\Release\net8.0\publish\CatalogService.dll
+C:\Users\Rasmus\Documents\store-systemer\group-project\docker-elk\catalog-service\bin\Release\net8.0\publish\CatalogService.deps.json
+C:\Users\Rasmus\Documents\store-systemer\group-project\docker-elk\catalog-service\bin\Release\net8.0\publish\CatalogService.runtimeconfig.json
+C:\Users\Rasmus\Documents\store-systemer\group-project\docker-elk\catalog-service\bin\Release\net8.0\publish\CatalogService.pdb
+C:\Users\Rasmus\Documents\store-systemer\group-project\docker-elk\catalog-service\bin\Release\net8.0\publish\Elastic.Clients.Elasticsearch.dll
+C:\Users\Rasmus\Documents\store-systemer\group-project\docker-elk\catalog-service\bin\Release\net8.0\publish\Elastic.Transport.dll
+C:\Users\Rasmus\Documents\store-systemer\group-project\docker-elk\catalog-service\bin\Release\net8.0\publish\Elasticsearch.Net.dll
+C:\Users\Rasmus\Documents\store-systemer\group-project\docker-elk\catalog-service\bin\Release\net8.0\publish\Microsoft.AspNetCore.OpenApi.dll
+C:\Users\Rasmus\Documents\store-systemer\group-project\docker-elk\catalog-service\bin\Release\net8.0\publish\Microsoft.OpenApi.dll
+C:\Users\Rasmus\Documents\store-systemer\group-project\docker-elk\catalog-service\bin\Release\net8.0\publish\Nest.dll
+C:\Users\Rasmus\Documents\store-systemer\group-project\docker-elk\catalog-service\bin\Release\net8.0\publish\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\Rasmus\Documents\store-systemer\group-project\docker-elk\catalog-service\bin\Release\net8.0\publish\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\Rasmus\Documents\store-systemer\group-project\docker-elk\catalog-service\bin\Release\net8.0\publish\Swashbuckle.AspNetCore.SwaggerUI.dll

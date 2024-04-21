@@ -27,5 +27,7 @@ namespace CatalogService.Controllers
             }
             return NotFound("Product not found.");
         }
+
+        
     }
 }

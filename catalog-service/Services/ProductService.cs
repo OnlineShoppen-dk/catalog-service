@@ -2,6 +2,7 @@ using Elastic.Clients.Elasticsearch;
 using CatalogService.Models;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using Nest;  // NEST Elasticsearch client library
 
 namespace CatalogService.Services
 {
@@ -13,6 +14,8 @@ namespace CatalogService.Services
         {
             _client = client;
         }
+
+        
 
         public async Task<Product> GetProductAsync(int productId)
         {
