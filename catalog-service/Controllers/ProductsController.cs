@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using CatalogService.Services;
+using CatalogService.Models;
 using System.Threading.Tasks;
 
 namespace CatalogService.Controllers
@@ -15,22 +16,18 @@ namespace CatalogService.Controllers
             _productService = productService;
         }
 
-        public async Task<IEnumerable<Product>> GetAllProductsAsync()
+        [HttpGet]
+        public async Task<IActionResult> GetAll()
         {
-            var searchResponse = await _client.SearchAsync<Product>(s => s
-                .Index("product-logs")
-                .Query(q => q
-                    .MatchAll()
-                )
-            );
-
-            if (searchResponse.IsValid)
+            try
             {
-                return searchResponse.Documents;
+                var documents = await _productService.GetAllProductsAsync();
+                return Ok(documents);
             }
-            else
+            catch (Exception ex)
             {
-                throw new Exception("Failed to fetch documents from Elasticsearch", searchResponse.OriginalException);
+                // Log the exception here
+                return StatusCode(500, "An error occurred while fetching documents from Elasticsearch");
             }
         }
         // GET: Products/{id}
