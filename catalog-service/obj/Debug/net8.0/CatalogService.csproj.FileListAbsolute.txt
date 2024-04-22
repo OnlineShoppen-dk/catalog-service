@@ -50,8 +50,11 @@ C:\Users\Rasmus\Documents\store-systemer\group-project\docker-elk\catalog-servic
 C:\Users\Rasmus\Documents\store-systemer\group-project\docker-elk\catalog-service\bin\Debug\net8.0\CatalogService.pdb
 C:\Users\Rasmus\Documents\store-systemer\group-project\docker-elk\catalog-service\bin\Debug\net8.0\Elastic.Clients.Elasticsearch.dll
 C:\Users\Rasmus\Documents\store-systemer\group-project\docker-elk\catalog-service\bin\Debug\net8.0\Elastic.Transport.dll
+C:\Users\Rasmus\Documents\store-systemer\group-project\docker-elk\catalog-service\bin\Debug\net8.0\Elasticsearch.Net.dll
 C:\Users\Rasmus\Documents\store-systemer\group-project\docker-elk\catalog-service\bin\Debug\net8.0\Microsoft.AspNetCore.OpenApi.dll
 C:\Users\Rasmus\Documents\store-systemer\group-project\docker-elk\catalog-service\bin\Debug\net8.0\Microsoft.OpenApi.dll
+C:\Users\Rasmus\Documents\store-systemer\group-project\docker-elk\catalog-service\bin\Debug\net8.0\Nest.dll
+C:\Users\Rasmus\Documents\store-systemer\group-project\docker-elk\catalog-service\bin\Debug\net8.0\Newtonsoft.Json.dll
 C:\Users\Rasmus\Documents\store-systemer\group-project\docker-elk\catalog-service\bin\Debug\net8.0\Swashbuckle.AspNetCore.Swagger.dll
 C:\Users\Rasmus\Documents\store-systemer\group-project\docker-elk\catalog-service\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Users\Rasmus\Documents\store-systemer\group-project\docker-elk\catalog-service\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll
@@ -69,5 +72,3 @@ C:\Users\Rasmus\Documents\store-systemer\group-project\docker-elk\catalog-servic
 C:\Users\Rasmus\Documents\store-systemer\group-project\docker-elk\catalog-service\obj\Debug\net8.0\CatalogService.pdb
 C:\Users\Rasmus\Documents\store-systemer\group-project\docker-elk\catalog-service\obj\Debug\net8.0\CatalogService.genruntimeconfig.cache
 C:\Users\Rasmus\Documents\store-systemer\group-project\docker-elk\catalog-service\obj\Debug\net8.0\ref\CatalogService.dll
-C:\Users\Rasmus\Documents\store-systemer\group-project\docker-elk\catalog-service\bin\Debug\net8.0\Elasticsearch.Net.dll
-C:\Users\Rasmus\Documents\store-systemer\group-project\docker-elk\catalog-service\bin\Debug\net8.0\Nest.dll

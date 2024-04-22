@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "g0ckFAnFI1XU0oX9jWU925a8/7evE1Hn5I8Xhm7gI4v8uaOvjw5/aaSpwvFbpT6gjBF3L5WHzp7Q6n9S/PddNg==",
+  "dgSpecHash": "LyYGwI5RYIrPDwRK9IdVottKRZOV4cQ0CnaO1ALCp0JyYv8tIzDgNhgf9xvxkUr7H5JpRCWNx6G+V34qDc4DQw==",
   "success": true,
   "projectFilePath": "C:\\Users\\Rasmus\\Documents\\store-systemer\\group-project\\docker-elk\\catalog-service\\CatalogService.csproj",
   "expectedPackageFiles": [
@@ -12,6 +12,7 @@
     "C:\\Users\\Rasmus\\.nuget\\packages\\microsoft.extensions.apidescription.server\\6.0.5\\microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
     "C:\\Users\\Rasmus\\.nuget\\packages\\microsoft.openapi\\1.4.3\\microsoft.openapi.1.4.3.nupkg.sha512",
     "C:\\Users\\Rasmus\\.nuget\\packages\\nest\\7.17.5\\nest.7.17.5.nupkg.sha512",
+    "C:\\Users\\Rasmus\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
     "C:\\Users\\Rasmus\\.nuget\\packages\\swashbuckle.aspnetcore\\6.4.0\\swashbuckle.aspnetcore.6.4.0.nupkg.sha512",
     "C:\\Users\\Rasmus\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.4.0\\swashbuckle.aspnetcore.swagger.6.4.0.nupkg.sha512",
     "C:\\Users\\Rasmus\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.4.0\\swashbuckle.aspnetcore.swaggergen.6.4.0.nupkg.sha512",

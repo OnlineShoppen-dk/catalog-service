@@ -15,18 +15,22 @@ namespace CatalogService.Controllers
             _productService = productService;
         }
 
-        [HttpGet]
-        public async Task<IActionResult> GetAll()
+        public async Task<IEnumerable<Product>> GetAllProductsAsync()
         {
-            try
+            var searchResponse = await _client.SearchAsync<Product>(s => s
+                .Index("product-logs")
+                .Query(q => q
+                    .MatchAll()
+                )
+            );
+
+            if (searchResponse.IsValid)
             {
-                var documents = await _productService.GetAllDocumentsAsync();
-                return Ok(documents);
+                return searchResponse.Documents;
             }
-            catch (Exception ex)
+            else
             {
-                // Log the exception here
-                return StatusCode(500, "An error occurred while fetching documents from Elasticsearch");
+                throw new Exception("Failed to fetch documents from Elasticsearch", searchResponse.OriginalException);
             }
         }
         // GET: Products/{id}

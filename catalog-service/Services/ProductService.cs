@@ -15,10 +15,10 @@ namespace CatalogService.Services
             _client = client;
         }
 
-        public async Task<IEnumerable<MyDocument>> GetAllDocumentsAsync()
+        public async Task<IEnumerable<Product>> GetAllProductsAsync()
         {
-            var searchResponse = await _client.SearchAsync<MyDocument>(s => s
-                .Index("product-logs") // replace with your index name
+            var searchResponse = await _client.SearchAsync<Product>(s => s
+                .Index("product-logs")
                 .Query(q => q
                     .MatchAll()
                 )
