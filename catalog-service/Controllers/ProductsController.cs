@@ -16,20 +16,20 @@ namespace CatalogService.Controllers
             _productService = productService;
         }
 
-        // [HttpGet]
-        // public async Task<IActionResult> GetAll()
-        // {
-        //     try
-        //     {
-        //         var documents = await _productService.GetAllProductsAsync();
-        //         return Ok(documents);
-        //     }
-        //     catch (Exception ex)
-        //     {
-        //         // Log the exception here
-        //         return StatusCode(500, "An error occurred while fetching documents from Elasticsearch");
-        //     }
-        // }
+        [HttpGet]
+        public async Task<IActionResult> GetAll()
+        {
+            try
+            {
+                var documents = await _productService.GetAllProductsAsync();
+                return Ok(documents);
+            }
+            catch (Exception ex)
+            {
+                // Log the exception here
+                return StatusCode(500, "An error occurred while fetching documents from Elasticsearch");
+            }
+        }
         // GET: Products/{id}
         [HttpGet("{id}")]
         public async Task<IActionResult> GetProduct(int id)

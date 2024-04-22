@@ -15,22 +15,24 @@ namespace CatalogService.Services
             _client = client;
         }
 
-        // public async Task<IEnumerable<Product>> GetAllProductsAsync()
-        // {
-        //     var response = await _client.Search<Product>(s => s
-        //         .Query(q => 
-        //             q.MatchAll()
-        //         )
-        //     );
-        //     if (response.IsValid)
-        //     {
-        //         return response.Documents;
-        //     }
-        //     else
-        //     {
-        //         throw new Exception("Failed to fetch documents from Elasticsearch", response.OriginalException);
-        //     }
-        // }
+        public async Task<IEnumerable<Product>> GetAllProductsAsync()
+        {
+
+            var response = await _client.SearchAsync<Product>(s => s
+                .Size(1000)
+                .Query(q => 
+                    q.Exists(t => t.Field(f => f.Id))
+                )
+            );
+            if (response.Documents.Any())
+            {
+                return response.Documents;
+            }
+            else
+            {
+                throw new Exception("Failed to fetch documents from Elasticsearch");
+            }
+        }
 
         public async Task<Product> GetProductAsync(int productId)
         {
