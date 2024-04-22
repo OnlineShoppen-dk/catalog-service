@@ -50,10 +50,8 @@ C:\Users\Rasmus\Documents\store-systemer\group-project\docker-elk\catalog-servic
 C:\Users\Rasmus\Documents\store-systemer\group-project\docker-elk\catalog-service\bin\Debug\net8.0\CatalogService.pdb
 C:\Users\Rasmus\Documents\store-systemer\group-project\docker-elk\catalog-service\bin\Debug\net8.0\Elastic.Clients.Elasticsearch.dll
 C:\Users\Rasmus\Documents\store-systemer\group-project\docker-elk\catalog-service\bin\Debug\net8.0\Elastic.Transport.dll
-C:\Users\Rasmus\Documents\store-systemer\group-project\docker-elk\catalog-service\bin\Debug\net8.0\Elasticsearch.Net.dll
 C:\Users\Rasmus\Documents\store-systemer\group-project\docker-elk\catalog-service\bin\Debug\net8.0\Microsoft.AspNetCore.OpenApi.dll
 C:\Users\Rasmus\Documents\store-systemer\group-project\docker-elk\catalog-service\bin\Debug\net8.0\Microsoft.OpenApi.dll
-C:\Users\Rasmus\Documents\store-systemer\group-project\docker-elk\catalog-service\bin\Debug\net8.0\Nest.dll
 C:\Users\Rasmus\Documents\store-systemer\group-project\docker-elk\catalog-service\bin\Debug\net8.0\Newtonsoft.Json.dll
 C:\Users\Rasmus\Documents\store-systemer\group-project\docker-elk\catalog-service\bin\Debug\net8.0\Swashbuckle.AspNetCore.Swagger.dll
 C:\Users\Rasmus\Documents\store-systemer\group-project\docker-elk\catalog-service\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll

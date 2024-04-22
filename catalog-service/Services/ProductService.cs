@@ -2,7 +2,7 @@ using Elastic.Clients.Elasticsearch;
 using CatalogService.Models;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Nest;  // NEST Elasticsearch client library
+// using Nest;  // NEST Elasticsearch client library
 
 namespace CatalogService.Services
 {
@@ -15,24 +15,22 @@ namespace CatalogService.Services
             _client = client;
         }
 
-        public async Task<IEnumerable<Product>> GetAllProductsAsync()
-        {
-            var searchResponse = await _client.SearchAsync<Product>(s => s
-                .Index("product-logs")
-                .Query(q => q
-                    .MatchAll()
-                )
-            );
-
-            if (searchResponse.IsValid)
-            {
-                return searchResponse.Documents;
-            }
-            else
-            {
-                throw new Exception("Failed to fetch documents from Elasticsearch", searchResponse.OriginalException);
-            }
-        }
+        // public async Task<IEnumerable<Product>> GetAllProductsAsync()
+        // {
+        //     var response = await _client.Search<Product>(s => s
+        //         .Query(q => 
+        //             q.MatchAll()
+        //         )
+        //     );
+        //     if (response.IsValid)
+        //     {
+        //         return response.Documents;
+        //     }
+        //     else
+        //     {
+        //         throw new Exception("Failed to fetch documents from Elasticsearch", response.OriginalException);
+        //     }
+        // }
 
         public async Task<Product> GetProductAsync(int productId)
         {
