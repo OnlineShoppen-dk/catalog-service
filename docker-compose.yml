@@ -42,6 +42,19 @@ services:
     depends_on:
       - elasticsearch1
 
+  catalogservice:
+    build:
+      context: catalog-service/
+      dockerfile: Dockerfile
+    ports:
+      - "8080:80"  # Maps port 80 in the container to port 8080 on the host
+    networks:
+      - elastic  # Ensures it is on the same network as your Elasticsearch services
+    depends_on:
+      - elasticsearch1  # Ensures it starts after Elasticsearch is available
+    restart: unless-stopped
+    environment:
+      - ELASTICSEARCH_URL=http://elasticsearch1:9200  # Example environment variable
 
   elasticsearch1:
     build:
