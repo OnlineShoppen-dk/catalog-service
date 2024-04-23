@@ -7,11 +7,11 @@ namespace CatalogService.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class ProductsController : ControllerBase
+    public class ProductController : ControllerBase
     {
         private readonly ProductService _productService;
 
-        public ProductsController(ProductService productService)
+        public ProductController(ProductService productService)
         {
             _productService = productService;
         }
@@ -21,8 +21,8 @@ namespace CatalogService.Controllers
         {
             try
             {
-                var documents = await _productService.GetAllProductsAsync();
-                return Ok(documents);
+                var products = await _productService.GetAllProductsAsync();
+                return Ok(products);
             }
             catch (Exception ex)
             {
