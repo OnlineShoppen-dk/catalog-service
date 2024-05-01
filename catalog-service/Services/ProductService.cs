@@ -15,6 +15,31 @@ namespace CatalogService.Services
             _client = client;
         }
 
+        public async Task<IEnumerable<Product>> SearchProductsAsync(string query)
+        {
+            var response = await _client.SearchAsync<Product>(s => s 
+                .Index("product-logs") 
+                .From(0)
+                .Size(10)
+                .Query(q => q
+                    .Wildcard(w => w
+                        .Field(f => f.Name)
+                        .Value($"*{query}*")
+                        .CaseInsensitive(true)
+                    )
+                )
+            );
+
+            if (response.IsValidResponse)
+            {
+                return response.Documents; 
+            }
+            else
+            {
+                throw new Exception("Search failed or no results found");
+            }
+        }
+
         public async Task<IEnumerable<Product>> GetAllProductsAsync()
         {
 

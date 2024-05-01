@@ -27,9 +27,29 @@ namespace CatalogService.Controllers
             catch (Exception ex)
             {
                 // Log the exception here
-                return StatusCode(500, "An error occurred while fetching documents from Elasticsearch");
+                return StatusCode(500, "An error occurred while fetching documents from Elasticsearch error: ${ex.Message}");
             }
         }
+
+        // GET: /Product/search?query=some-text
+        [HttpGet("search")]
+        public async Task<IActionResult> Search([FromQuery] string query)
+        {
+            try
+            {
+                var products = await _productService.SearchProductsAsync(query);
+                if (products.Any())
+                {
+                    return Ok(products);
+                }
+                return NotFound("No products found matching your query.");
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"An error occurred while performing the search: {ex.Message}");
+            }
+        }
+        
         // GET: Products/{id}
         [HttpGet("{id}")]
         public async Task<IActionResult> GetProduct(int id)
@@ -42,6 +62,25 @@ namespace CatalogService.Controllers
             }
             return NotFound("Product not found.");
         }
+
+        // [HttpGet("search")]
+        // public async Task<IActionResult> Search(string query)
+        // {
+        //     try
+        //     {
+        //         var products = await _productService.SearchProductsAsync(query);
+        //         if (products.Any())
+        //         {
+        //             return Ok(products);
+        //         }
+        //         return NotFound("No products found matching your query.");
+        //     }
+        //     catch (Exception ex)
+        //     {
+        //         // Log the exception here
+        //         return StatusCode(500, "An error occurred while performing the search");
+        //     }
+        // }
 
         
     }
